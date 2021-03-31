@@ -3,3 +3,28 @@ extends layout
 block content
   h1= title
   
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let pens = [
+                    {
+                        "type": "Pinpoint",
+                        "color": "blue",
+                        "price": "20"                        
+                    },
+                    {
+                        "type": "Reynolds",
+                        "color": "green",
+                        "price": "100"
+                    },
+                    {
+                        "type": "Rollerball Pen",
+                        "color": "black",
+                        "price": "250"
+                    },                   
+                ]
+            each pen in pens 
+                div(class="col-sm-2") #{pen.type}
+                div(class="col-sm-2") #{pen.color}
+                div(class="col-sm-2") #{pen.price}
+  
