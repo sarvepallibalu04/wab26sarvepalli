@@ -11,12 +11,12 @@ block content
   else if rows>4 || rows<0
     p rows should be range 0 to 4
   else if cols>4 || cols<0
-    p cols should be range 0 to 4
+    p cols  should be range 0 to 4
   else 
     table#outer
-        - for(let i=0; i<3; i++) {
+        - for(let i=0; i<rows; i++) {
             tr#middle
-                - for(let j=i; j<4; j++) {
-                    td #{j}
+                - for(let j=0; j<cols; j++) {
+                    td #{i+j}
                 - }
         - }

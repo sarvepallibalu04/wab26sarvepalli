@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  - let mobiles = [{mobileName:"apple",color:"white",price:"2000"},{mobileName:"dell",color:"black",price:"7000"},{mobileName:"motorola",color:"white",price:"5000"}]
+  div(class="container-fluid mt-2")
+  div(class="row")
+    each m ,index in mobiles 
+        div(class="col-sm-2 bg-success m-2 p-2" onclick=`buy(${index})`) #{m.mobileName} - #{m.color} - #{m.price}
+  script.
+    function buy(itemNo){
+      alert(`You purchased Item ${itemNo+1}`)
+    }
